@@ -1,24 +1,21 @@
-/* Simulated box shadow using borders: */
-.box {
-    text-align: center;
-    background-color: #eee;
-    height: 200px;
-    width: 200px;
-    border-bottom: 1px solid #666;
-    border-right: 1px solid #777;
+#color-panel {
+    margin-top: 1em;
 }
-.boxshadow div.box {
-     border: none;
-    -webkit-box-shadow: 5px 5px 5px #666;
-    -moz-box-shadow: 5px 5px 5px #666;
-    box-shadow: 5px 5px 5px #666;
+.color-palette {
+    margin-right: 0.5em;
+    width: 30px;
+    height: 30px;
+    display: block;
+    padding: 0px;
+    float: left;
+    border: 1px solid #aaa;
 }
-
-.borderradius div.box {
-    -webkit-border-radius: 5px;
-    -webkit-border-top-right-radius: 10px;
-    -moz-border-radius: 5px;
-    -moz-border-radius-topright: 10px;
-    border-radius: 5px;
-    border-top-right-radius: 10px;
+.yellow {
+    background-color: yellow;
+}
+.blue {
+    background-color: blue;
+}
+.black {
+    background-color: black;
 }
