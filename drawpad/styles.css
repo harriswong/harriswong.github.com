@@ -1,0 +1,24 @@
+/* Simulated box shadow using borders: */
+.box {
+    text-align: center;
+    background-color: #eee;
+    height: 200px;
+    width: 200px;
+    border-bottom: 1px solid #666;
+    border-right: 1px solid #777;
+}
+.boxshadow div.box {
+     border: none;
+    -webkit-box-shadow: 5px 5px 5px #666;
+    -moz-box-shadow: 5px 5px 5px #666;
+    box-shadow: 5px 5px 5px #666;
+}
+
+.borderradius div.box {
+    -webkit-border-radius: 5px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius: 5px;
+    -moz-border-radius-topright: 10px;
+    border-radius: 5px;
+    border-top-right-radius: 10px;
+}
