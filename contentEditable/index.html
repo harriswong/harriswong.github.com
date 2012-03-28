@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<title>Rich Text Editor</title>
+<script type="text/javascript">
+var oDoc, sDefTxt;
+
+function initDoc() {
+  oDoc = document.getElementById("textBox");
+  sDefTxt = oDoc.innerHTML;
+}
+
+function formatDoc(sCmd, sValue) {
+  document.execCommand(sCmd, false, sValue); 
+  oDoc.focus();
+}
+
+function setDocMode(bToSource) {
+  var oContent;
+  if (bToSource) {
+    oContent = document.createTextNode(oDoc.innerHTML);
+    oDoc.innerHTML = "";
+    var oPre = document.createElement("pre");
+    oDoc.contentEditable = false;
+    oPre.id = "sourceText";
+    oPre.contentEditable = true;
+    oPre.appendChild(oContent);
+    oDoc.appendChild(oPre);
+  } else {
+    if (document.all) {
+      oDoc.innerHTML = oDoc.innerText;
+    } else {
+      oContent = document.createRange();
+      oContent.selectNodeContents(oDoc.firstChild);
+      oDoc.innerHTML = oContent.toString();
+    }
+    oDoc.contentEditable = true;
+  }
+  oDoc.focus();
+}
+</script>
+<style type="text/css">
+.intLink { cursor: pointer; }
+img.intLink { border: 0; }
+#toolBar1 select { font-size:10px; }
+#textBox {
+  width: 540px;
+  height: 200px;
+  border: 1px #000000 solid;
+  padding: 12px;
+  overflow: scroll;
+}
+#textBox #sourceText {
+  padding: 0;
+  margin: 0;
+  min-width: 498px;
+  min-height: 200px;
+}
+#editMode label { cursor: pointer; }
+</style>
+</head>
+<body onload="initDoc();">
+<div name="compForm">
+	<div id="toolBar1">
+		<select onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;">
+		<option selected>- formatting -</option>
+			<option value="&lt;h1&gt;">Title 1 &lt;h1&gt;</option>
+			<option value="&lt;h2&gt;">Title 2 &lt;h2&gt;</option>
+			<option value="&lt;h3&gt;">Title 3 &lt;h3&gt;</option>
+			<option value="&lt;h4&gt;">Title 4 &lt;h4&gt;</option>
+			<option value="&lt;h5&gt;">Title 5 &lt;h5&gt;</option>
+			<option value="&lt;h6&gt;">Subtitle &lt;h6&gt;</option>
+			<option value="&lt;p&gt;">Paragraph &lt;p&gt;</option>
+			<option value="&lt;pre&gt;">Preformatted &lt;pre&gt;</option>
+		</select>
+		<select onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;">
+			<option class="heading" selected>- font -</option>
+			<option>Arial</option>
+			<option>Arial Black</option>
+			<option>Courier New</option>
+			<option>Times New Roman</option>
+			<option>Open Sans</option>
+		</select>
+		<select onchange="formatDoc('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;">
+			<option class="heading" selected>- size -</option>
+			<option value="1">Very small</option>
+			<option value="2">A bit small</option>
+			<option value="3">Normal</option>
+			<option value="4">Medium-large</option>
+			<option value="5">Big</option>
+			<option value="6">Very big</option>
+			<option value="7">Maximum</option>
+		</select>
+
+		<div id="toolBar2">
+
+		<button onclick="formatDoc('bold');">B</button>
+		<button onclick="formatDoc('italic');">I</button>
+		<button onclick="formatDoc('underline');">U</button>
+		<button onclick="formatDoc('formatblock','&lt;blockquote&gt;');">"</button>
+	</div>
+	<div id="textBox" contenteditable="true"><p>Lorem ipsum</p></div>
+	<p id="editMode"><input type="checkbox" name="switchMode" id="switchBox" onchange="setDocMode(this.checked);" /> <label for="switchBox">Show HTML</label></p>
+
+</form>
+</body>
+</html>
