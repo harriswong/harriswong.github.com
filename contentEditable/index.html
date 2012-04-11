@@ -63,8 +63,8 @@ img.intLink { border: 0; }
 <body onload="initDoc();">
 <div name="compForm">
 	<div id="toolBar1">
-		<select onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;">
-		<option selected>- formatting -</option>
+		<select onchange="formatDoc('formatblock',this[this.selectedIndex].value);">
+		<option>- formatting -</option>
 			<option value="&lt;h1&gt;">Title 1 &lt;h1&gt;</option>
 			<option value="&lt;h2&gt;">Title 2 &lt;h2&gt;</option>
 			<option value="&lt;h3&gt;">Title 3 &lt;h3&gt;</option>
@@ -74,16 +74,16 @@ img.intLink { border: 0; }
 			<option value="&lt;p&gt;">Paragraph &lt;p&gt;</option>
 			<option value="&lt;pre&gt;">Preformatted &lt;pre&gt;</option>
 		</select>
-		<select onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;">
-			<option class="heading" selected>- font -</option>
+		<select onchange="formatDoc('fontname',this[this.selectedIndex].value);">
+			<option class="heading">- font -</option>
 			<option>Arial</option>
 			<option>Arial Black</option>
 			<option>Courier New</option>
 			<option>Times New Roman</option>
 			<option>Open Sans</option>
 		</select>
-		<select onchange="formatDoc('fontsize',this[this.selectedIndex].value);this.selectedIndex=0;">
-			<option class="heading" selected>- size -</option>
+		<select onchange="formatDoc('fontsize',this[this.selectedIndex].value);console.log(this);">
+			<option class="heading">- size -</option>
 			<option value="1">Very small</option>
 			<option value="2">A bit small</option>
 			<option value="3">Normal</option>
