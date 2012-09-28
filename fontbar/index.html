@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script type="text/javascript" src="jquery-ui/js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.22.custom.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/Heartstring.js"></script>
+        <script src="js/Fontbar.js"></script>
+        <link type="text/css" href="jquery-ui/css/flick/jquery-ui-1.8.22.custom.css" rel="stylesheet" />
+        <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link type="text/css" href="styles.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <script>
+            $(document).ready(function() {
+                var fontbarConfig = {
+                        selectors: {
+                            content: 'hs-content',
+                            controllerFontBigger: "hs-controller-font-bigger",
+                            controllerFontSmaller: "hs-controller-font-smaller",
+                            controllerContrast: "hs-controller-contrast",
+                            controllerSlider: "hs-controller-slider",
+                            controllerToggler: "hs-controller-toggler", //The button that opens and close the panel.
+                            controller: "#hs-controller" //controller toolbar
+                        }
+                    };
+                Heartstring.Fontbar.init(".hs-fontbar", fontbarConfig);
+            });
+        </script>
+        
+        <div class="container">
+            <p class="hs-content"> Grumpy wizards make toxic brew for the evil Queen and Jack. One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. </p>
+            <div class="row navbar-fixed-bottom hs-fontbar">
+                <div class="hs-controller-toggler">
+                    <i class="hs-icon"><img src="img/glyphicons/glyphicons_187_more.png"/></i>
+                </div>
+                <div id="hs-controller" class="span4 offset5" style="display: none;">
+                    <div style="margin-bottom: 9px" class="btn-toolbar">
+                        <div class="btn-group">
+                          <button id="hs-controller-font-family" class="btn"><i class="icon-font"></i></button>
+                          <button id="hs-controller-contrast" class="btn"><i class="icon-adjust"></i></button>
+                          <button id="hs-controller-font-smaller" class="btn"><i class="hs-icon"><img src="img/glyphicons/glyphicons_115_text_smaller.png"></i></button>
+                          <button id="hs-controller-font-bigger" class="btn"><i class="hs-icon"><img src="img/glyphicons/glyphicons_116_text_bigger.png"></i></button>
+                          <div class="hs-controller-slider" id="hs-controller-slider"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

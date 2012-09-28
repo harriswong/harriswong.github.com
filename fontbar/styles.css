@@ -1,0 +1,21 @@
+.hs-fontbar {
+    background-color: #bbb;
+}
+.hs-controller-slider {
+    width: 150px;
+    margin-left: 150px;
+    margin-top: 5px;
+}
+
+.hs-icon img {
+    width: 14px;
+}
+.hs-controller-toggler {
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 0;
+}
+.btn-more {
+    padding: 10px;
+}
